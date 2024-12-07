@@ -13,7 +13,7 @@ class HomeController extends AbstractController
     #[Route(path: "/test", name: "test", methods: ["GET"], format: "json")]
     public function readAll(
         Request $request,
-        #[MapQueryString(serializationContext: [ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => false])] FilterDTO $filter = new FilterDTO,
+        #[MapQueryString] FilterDTO $filter = new FilterDTO,
     ): JsonResponse
     {
         dd($filter, $request->query->all());
